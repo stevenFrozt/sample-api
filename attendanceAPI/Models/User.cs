@@ -11,5 +11,7 @@ namespace attendanceAPI.Models
         public string Email { get; set; } = string.Empty;
         public string Gender { get; set; } = string.Empty;
         public DateTime BirthDate { get; set; }
+        public Guid? ProfileImageId { get; set; }
+        public string ProfileImageURL { get; set; } = string.Empty;
     }
 }

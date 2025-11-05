@@ -11,5 +11,6 @@ namespace attendanceAPI.Data
         // Example table
         public DbSet<User>? User { get; set; }
         public DbSet<Attendance>? Attendance { get; set; }
+        public DbSet<Image>? Image { get; set; }
     }
 }

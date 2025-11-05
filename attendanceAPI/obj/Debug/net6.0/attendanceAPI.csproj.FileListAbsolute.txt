@@ -64,3 +64,6 @@ D:\Downloads\Tranining Projects\sample-api\attendanceAPI\bin\Debug\net6.0\Micros
 D:\Downloads\Tranining Projects\sample-api\attendanceAPI\bin\Debug\net6.0\Microsoft.Bcl.TimeProvider.dll
 D:\Downloads\Tranining Projects\sample-api\attendanceAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Downloads\Tranining Projects\sample-api\attendanceAPI\bin\Debug\net6.0\Ardalis.Result.dll
+D:\Downloads\Tranining Projects\sample-api\attendanceAPI\obj\Debug\net6.0\attendanceAPI.sourcelink.json
+D:\Downloads\Tranining Projects\sample-api\attendanceAPI\bin\Debug\net6.0\attendanceAPI.staticwebassets.runtime.json
+D:\Downloads\Tranining Projects\sample-api\attendanceAPI\bin\Debug\net6.0\SixLabors.ImageSharp.dll
