@@ -1,6 +1,7 @@
 using Ardalis.Result;
 using attendanceAPI.Features.Images.Commands.CreateImage;
 using attendanceAPI.Features.Images.Commands.DeleteImage;
+using attendanceAPI.Features.Images.Commands.UpdateImage;
 using attendanceAPI.Features.Images.Queries.GetAllImage;
 using attendanceAPI.Models;
 using MediatR;
@@ -52,6 +53,23 @@ namespace attendanceAPI.Controllers
         {
 
             var result = await _mediator.Send(new DeleteImageCommand(id));
+            return result.Status switch
+            {
+                ResultStatus.Ok => Ok(result.Value),
+                ResultStatus.NotFound => NotFound(result.Errors),
+                ResultStatus.Invalid => BadRequest(result.ValidationErrors),
+                ResultStatus.Error => StatusCode(500, result.Errors),
+                _ => BadRequest(result.Errors)
+            };
+
+
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Image>> UpdateImage(Guid id, IFormFile request)
+        {
+
+            var result = await _mediator.Send(new UpdateImageCommand(id, request));
             return result.Status switch
             {
                 ResultStatus.Ok => Ok(result.Value),
