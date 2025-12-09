@@ -1,7 +1,9 @@
 
-namespace attendanceAPI.Models
+using attendanceAPI.Models;
+
+namespace attendanceAPI.Features.Users.Queries.GetAllUsers
 {
-    public class User
+    public class GetAllUsersResponse
     {
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Username { get; set; } = string.Empty;
@@ -12,6 +14,5 @@ namespace attendanceAPI.Models
         public string Gender { get; set; } = string.Empty;
         public DateTime BirthDate { get; set; }
         public Image? Image { get; set; } = null;
-        public ICollection<RefreshToken>? RefreshTokens { get; set; }
     }
 }

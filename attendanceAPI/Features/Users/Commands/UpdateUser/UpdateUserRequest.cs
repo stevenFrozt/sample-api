@@ -1,5 +1,6 @@
 
 using System.ComponentModel.DataAnnotations;
+using attendanceAPI.Models;
 
 
 namespace attendanceAPI.Features.Users.Commands.CreateUser
@@ -19,5 +20,7 @@ namespace attendanceAPI.Features.Users.Commands.CreateUser
         public string Email { get; set; } = string.Empty;
         public string Gender { get; set; } = string.Empty;
         public DateTime BirthDate { get; set; }
+
+        public Image? Image { get; set; } = null;
     }
 }

@@ -3,7 +3,7 @@ using MediatR;
 
 namespace attendanceAPI.Features.Users.Queries.GetAllUsers
 {
-    public class GetAllUsersQuery : IRequest<List<User>>
+    public class GetAllUsersQuery : IRequest<List<GetAllUsersResponse>>
     {
 
     }

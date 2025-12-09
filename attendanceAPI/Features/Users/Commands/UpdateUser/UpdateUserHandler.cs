@@ -23,6 +23,8 @@ namespace attendanceAPI.Features.Users.Commands.CreateUser
             if (request == null)
                 return Result.Invalid();
 
+
+
             var existingUser = await _context.User!.FindAsync(new object?[] { request.Id }, cancellationToken);
 
             if (existingUser == null)

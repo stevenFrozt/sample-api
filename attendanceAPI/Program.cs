@@ -1,6 +1,6 @@
 using System.Reflection;
 using attendanceAPI.Data;
-using attendanceAPI.Mappers;
+using attendanceAPI.Extensions;
 using attendanceAPI.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,9 +14,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerWithJwt();
 builder.Services.AddJwtAuth(builder.Configuration);
 builder.Services.AddAuthorization();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 var app = builder.Build();
 

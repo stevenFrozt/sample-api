@@ -6,6 +6,7 @@ using attendanceAPI.Features.Users.Queries.GetAllUsers;
 using attendanceAPI.Features.Users.Queries.GetUserById;
 using attendanceAPI.Models;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace attendanceAPI.Controllers
@@ -22,6 +23,7 @@ namespace attendanceAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
         {
 

@@ -7,22 +7,34 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Add this section -->
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Ardalis.Result" Version="10.1.0" />
     <PackageReference Include="Autofac" Version="8.4.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageReference Include="MediatR" Version="13.1.0" />
-    <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="13.1.0" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.36" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.36" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.36">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.35.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.22" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.12" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.35.0" />
   </ItemGroup>
 
 </Project>

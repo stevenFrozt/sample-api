@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using attendanceAPI.Data;
@@ -11,9 +12,10 @@ using attendanceAPI.Data;
 namespace attendanceAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251209035502_addednewimagemodel1")]
+    partial class addednewimagemodel1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,40 +84,6 @@ namespace attendanceAPI.Migrations
                     b.ToTable("Image");
                 });
 
-            modelBuilder.Entity("attendanceAPI.Models.RefreshToken", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime>("ExpiresAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("ReplacedByToken")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime?>("RevokedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Token")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Token");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("RefreshTokens");
-                });
-
             modelBuilder.Entity("attendanceAPI.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -159,17 +127,6 @@ namespace attendanceAPI.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("attendanceAPI.Models.RefreshToken", b =>
-                {
-                    b.HasOne("attendanceAPI.Models.User", "User")
-                        .WithMany("RefreshTokens")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("attendanceAPI.Models.User", b =>
                 {
                     b.HasOne("attendanceAPI.Models.Image", "Image")
@@ -177,11 +134,6 @@ namespace attendanceAPI.Migrations
                         .HasForeignKey("ImageId");
 
                     b.Navigation("Image");
-                });
-
-            modelBuilder.Entity("attendanceAPI.Models.User", b =>
-                {
-                    b.Navigation("RefreshTokens");
                 });
 #pragma warning restore 612, 618
         }

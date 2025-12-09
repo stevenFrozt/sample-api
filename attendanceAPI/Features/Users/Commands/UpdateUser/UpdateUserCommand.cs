@@ -17,6 +17,8 @@ namespace attendanceAPI.Features.Users.Commands.UpdateUser
         public string Gender { get; set; } = string.Empty;
         public DateTime BirthDate { get; set; }
 
+        public Image? Image { get; set; } = null;
+
         public UpdateUserCommand(Guid id, UpdateUserRequest request)
         {
             Id = id;
@@ -27,6 +29,7 @@ namespace attendanceAPI.Features.Users.Commands.UpdateUser
             Email = request.Email ?? string.Empty;
             Gender = request.Gender ?? string.Empty;
             BirthDate = request.BirthDate;
+            Image = request.Image ?? null;
         }
     }
 }
